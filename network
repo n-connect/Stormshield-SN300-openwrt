@@ -1,0 +1,92 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '1'
+	option name 'vlan1'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'vlan2'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '3'
+	option name 'vlan3'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '4'
+	option name 'vlan4'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '5'
+	option name 'vlan5'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '6'
+	option name 'vlan6'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '7'
+	option name 'vlan7'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '8'
+	option name 'vlan8'
+
+config interface 'port01'
+	option proto 'static'
+	option device 'vlan1'
+	option ipaddr 'YOUR-IP'
+	option netmask 'YOUR-NETMASK'
+	option gateway 'YOUR-GATEWAY'
+	list dns 'YOUR-DNS'
+
+config interface 'port02'
+	option proto 'dhcp'
+	option device 'vlan2'
+
+config interface 'port03'
+	option proto 'dhcp'
+	option device 'vlan3'
+
+config interface 'port04'
+	option proto 'dhcp'
+	option device 'vlan4'
+
+config interface 'port05'
+	option proto 'dhcp'
+	option device 'vlan5'
+
+config interface 'port06'
+	option proto 'dhcp'
+	option device 'vlan6'
+
+config interface 'port07'
+	option proto 'dhcp'
+	option device 'vlan7'
+
+config interface 'port08'
+	option proto 'dhcp'
+	option device 'vlan8'
+
+
