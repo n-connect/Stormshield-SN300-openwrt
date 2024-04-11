@@ -1,0 +1,117 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+        option ula_prefix 'fdd0:66e1:6c49::/48'
+
+config device
+        option name 'br-lan'
+        option type 'bridge'
+        list ports 'eth0.2'
+        list ports 'eth0.3'
+        list ports 'eth0.4'
+        list ports 'eth0.5'
+        list ports 'eth0.6'
+        list ports 'eth0.7'
+        list ports 'eth0.8'
+
+config interface 'lan'
+        option device 'br-lan'
+        option proto 'static'
+        option ipaddr '192.168.1.1'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+
+config interface 'wan'
+        option device 'eth0.1'
+        option proto 'dhcp'
+
+config interface 'wan6'
+        option device 'eth0.1'
+        option proto 'dhcpv6'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '1'
+	option name 'eth0.1'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.2'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.3'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.4'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.5'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.6'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.7'
+
+config device
+	option type '8021q'
+	option ifname 'eth0'
+	option vid '2'
+	option name 'eth0.8'
+
+config interface 'port01'
+	#option proto 'dhcp'
+	option device 'eth0.1'
+
+config interface 'port02'
+	option proto 'dhcp'
+	option device 'eth0.2'
+
+config interface 'port03'
+	option proto 'dhcp'
+	option device 'eth0.3'
+
+config interface 'port04'
+	option proto 'dhcp'
+	option device 'eth0.4'
+
+config interface 'port05'
+	option proto 'dhcp'
+	option device 'eth0.5'
+
+config interface 'port06'
+	option proto 'dhcp'
+	option device 'eth0.6'
+
+config interface 'port07'
+	option proto 'dhcp'
+	option device 'eth0.7'
+
+config interface 'port08'
+	option proto 'dhcp'
+	option device 'eth0.8'
+
+
